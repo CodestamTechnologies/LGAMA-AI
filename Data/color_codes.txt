@@ -1,0 +1,4 @@
+\033[91m for red
+\033[94m for blue
+\033[92m for green
+\033[0m for resetting the color to default

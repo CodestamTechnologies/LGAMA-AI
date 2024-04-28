@@ -1,0 +1,3 @@
+*.env
+*extracted_emails.txt
+*scraped_content.txt
