@@ -1,3 +1,0 @@
-'"facebook.com" "@gmail.com" "realstate" "agent" "Maryland"'  
-'"facebook.com" "@gmail.com" "realstate" "agent" "Maine"'  
-'"facebook.com" "@gmail.com" "realstate" "agent" "Louisiana"'  

@@ -61,11 +61,15 @@ class LeadDataProcessor:
         file_path = f"{filename}.csv"
         if os.path.exists(file_path):
             existing_data = pd.read_csv(file_path)
-            updated_data = pd.concat([existing_data, data], ignore_index=True)
-            updated_data.to_csv(file_path, index=False)
+            # Check if any rows in the new data already exist in the existing data
+            new_rows = data[~data.isin(existing_data)].dropna()
+            if not new_rows.empty:
+                updated_data = pd.concat([existing_data, new_rows], ignore_index=True)
+                updated_data.to_csv(file_path, index=False)
         else:
             data.to_csv(file_path, index=False)
         return file_path
+
 
 def process_lead_data(api_key, file_location):
     with open(file_location, 'r', encoding='utf-8') as file:
